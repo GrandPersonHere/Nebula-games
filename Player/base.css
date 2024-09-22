@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #431475, #331433);
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  padding: 2vh; /* Adjust padding relative to the viewport height */
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3vw; /* Adjust gap for responsive spacing */
+  background-color: white;
+  padding: 2vh 35vw; /* Adjust padding to match image and screen size */
+  border-radius: 2vw;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li img {
+  width: 3vw; /* Use viewport width for image size */
+  height: 3vw;
+  margin-left: 0vw;
+  transition: transform 0.3s ease;
+}
+
+nav ul li img:hover {
+  transform: scale(1.2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 10vh; /* Space between header and iframe */
+}
+
+iframe {
+  width: 60vw; /* 70% of the viewport width */
+  height: 60vh; /* 70% of the viewport height */
+  border: 2px solid white; /* Optional styling */
+  border-radius: 10px; /* Optional styling */
+  margin-bottom: 10px; /* Space between iframe and button container */
+}
+
+.button-container {
+  width: 60vw; /* Match the iframe width */
+  background-color: black; /* Black background */
+  padding: .5vw; /* Padding around the button */
+  display: flex;
+  justify-content: right; /* Center the button */
+  border-radius: 1vw; /* Optional: round edges */
+  margin-top: .5vh;
+}
+
+button {
+  width: 3.75vw; /* Width of the button */
+  height: 3.75vw; /* Height of the button */
+  cursor: pointer;
+  background-color: #ffffff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: .75vw; /* Optional: round edges */
+  transition: background-color 0.3s ease; /* Transition effect */
+  justify-content: center; /* Center the button */
+}
+
+#full {
+  width: 3.25vw; /* Width of the button */
+  height: 3.25vw; /* Height of the button */
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  nav ul {
+      padding: 2vh 5vw;
+  }
+}

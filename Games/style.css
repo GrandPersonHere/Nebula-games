@@ -1,0 +1,176 @@
+/* Apply box-sizing, margin, and padding to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #431475 0%, #331433 100%);
+  background-size: cover; /* Ensure the background covers the whole area */
+  background-attachment: fixed; /* Make the background sticky */
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3vw; /* Adjust spacing between items */
+  background-color: white;
+  padding: 2vh 35vw; /* Adjust padding using viewport units */
+  border-radius: 2vw; /* Rounded edges for the background */
+}
+
+/* Navigation list item styling */
+nav ul li {
+  display: inline-block;
+}
+
+/* Navigation icon styling */
+nav ul li img {
+  width: 3vw; /* Icon size relative to viewport width */
+  height: 3vw;
+  margin-left: 0vw;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for icons */
+nav ul li img:hover {
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+
+/* Search container styling */
+.search-container {
+  margin: 15vh auto 0 auto; /* Space above the search bar */
+  text-align: center; /* Center the search bar */
+}
+
+#searchBar {
+  padding: 1.25vw 16vw; /* Increased padding for a larger feel */
+  width: 100%; /* Increased width for more space */
+  border: 2px solid white;
+  border-radius: 2vw;
+  color: white; /* Text color */
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 18px; /* Slightly larger font size */
+  transition: border 0.3s;
+  text-align: center; /* Center the text */
+}
+
+/* Optionally, add a placeholder color */
+#searchBar::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Light gray for placeholder */
+}
+
+
+/* Focus effect for the search bar */
+#searchBar:focus {
+  outline: none;
+  border: 2px solid #431475;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Container for boxes */
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4vw; /* Adjusts spacing between boxes */
+  max-width: 80vw; /* Ensures the container adjusts based on screen size */
+  margin: 4vh auto 0 auto; /* Space below header and centered horizontally */
+  justify-content: center;
+}
+
+/* Individual box styling */
+.box {
+  position: relative; /* Enable absolute positioning for child elements */
+  width: 9vw; /* Size of the box */
+  height: 9vw; 
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  border-radius: 2vw; /* Rounded corners for boxes */
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  background-color: transparent; /* No background color */
+}
+
+/* Centered span styling */
+.box span {
+  position: absolute; /* Position it absolutely within the box */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset to truly center it */
+  color: white; /* Text color */
+  z-index: 1; /* Ensure it's above the image */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Adjust image size to fit within the box */
+.box img {
+  width: 100%; /* Image adjusts to 100% of the box size */
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  border-radius: inherit; /* Inherits the box's border-radius */
+}
+
+/* Box hover effect */
+.box:hover {
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Hover effect on the image */
+.box:hover span {
+  opacity: 1; /* Show the span on hover */
+}
+
+/* Overlay background on hover */
+.box:hover::before {
+  content: ""; /* Necessary for pseudo-element */
+  position: absolute; /* Positioning the overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7); /* 70% opacity gray background */
+  z-index: 0; /* Place behind the span */
+}
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  nav ul {
+    padding: 2vh 5vw;
+  }
+
+  .box {
+    width: 30vw; /* Make boxes bigger on smaller screens */
+    height: 30vw;
+  }
+
+  .box img {
+    width: 100%;
+    height: 100%;
+  }
+} 

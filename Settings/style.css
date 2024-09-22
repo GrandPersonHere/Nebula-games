@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #431475, #331433);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+  
+header {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    padding: 2vh; /* Adjust padding relative to the viewport height */
+    display: flex;
+    justify-content: center;
+}
+  
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 3vw; /* Adjust gap for responsive spacing */
+    background-color: white;
+    padding: 2vh 35vw; /* Adjust padding to match image and screen size */
+    border-radius: 2vw;
+}
+  
+nav ul li {
+    display: inline-block;
+}
+  
+nav ul li img {
+    width: 3vw; /* Use viewport width for image size */
+    height: 3vw;
+    margin-left: 0vw;
+    transition: transform 0.3s ease;
+}
+  
+nav ul li img:hover {
+    transform: scale(1.2);
+}
+
+/* Add some basic styling to the button */
+#toggle-button {
+    background-color: #1f201f;
+    color: #fff;
+    padding: 2.5vh 5vw;
+    font-size: 1.5vw;
+    border: none;
+    border-radius: 5vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+#toggle-button:hover {
+    background-color: #4b4b4b;
+    transform: scale(1.1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+      padding: 2vh 5vw;
+    }
+}
